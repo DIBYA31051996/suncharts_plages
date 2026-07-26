@@ -7,6 +7,9 @@ Reproducibility material for:
 > *The Astrophysical Journal Supplement Series* 283, 19 (2026).
 > [doi:10.3847/1538-4365/ae381e](https://doi.org/10.3847/1538-4365/ae381e)
 
+The repository's original README is preserved unchanged in
+[`README_ORIGINAL.md`](README_ORIGINAL.md).
+
 Start with [`notebooks/figure_code.ipynb`](notebooks/figure_code.ipynb). It
 reproduces Figures 1, 3, 6, and the online-data panel Figure 12(a), using
 repository-relative paths.
