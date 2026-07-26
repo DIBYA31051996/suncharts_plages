@@ -1,5 +1,9 @@
 # Machine Learning–based Identification of the Solar Disk and Plages in Kodaikanal Solar Observatory Historical Suncharts
 
+**Authors:** Dibya Kirti Mishra, Subhamoy Chatterjee, Bibhuti Kumar Jha, Hemapriya Raju, Aditya Priyadarshi, Manjunath Hegde, Srinjana Routh, Dipankar Banerjee
+
+[![DOI](https://img.shields.io/badge/DOI-10.3847%2F1538--4365%2Fae381e-blue)](https://iopscience.iop.org/article/10.3847/1538-4365/ae381e/meta)
+
 ## Abstract
 
 <p align="justify">
@@ -18,4 +22,3 @@ Kodaikanal Solar Observatory (KoSO) is one of the oldest solar observatories, po
 ## Plage-area butterfly diagram
 
 ![Plage-area time–latitude butterfly diagrams from the current work, Jha et al. (2024), and the composite series](plots/butterfly_main_result.png)
-
