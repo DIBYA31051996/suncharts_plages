@@ -1,49 +1,24 @@
-# KoSO sunchart plage figures
+# Machine Learning–based Identification of the Solar Disk and Plages in Kodaikanal Solar Observatory Historical Suncharts
 
-Reproducibility material for:
+**Authors:** Dibya Kirti Mishra, Subhamoy Chatterjee, Bibhuti Kumar Jha, Hemapriya Raju, Aditya Priyadarshi, Manjunath Hegde, Srinjana Routh, Dipankar Banerjee
 
-> D. K. Mishra et al., "Machine Learning-based Identification of the Solar
-> Disk and Plages in Kodaikanal Solar Observatory Historical Suncharts,"
-> *The Astrophysical Journal Supplement Series* 283, 19 (2026).
-> [doi:10.3847/1538-4365/ae381e](https://doi.org/10.3847/1538-4365/ae381e)
+[![DOI](https://img.shields.io/badge/DOI-10.3847%2F1538--4365%2Fae381e-blue)](https://iopscience.iop.org/article/10.3847/1538-4365/ae381e/meta)
 
-The repository's original README is preserved unchanged in
-[`README_ORIGINAL.md`](README_ORIGINAL.md).
+## Abstract
 
-Start with [`notebooks/figure_code.ipynb`](notebooks/figure_code.ipynb). It
-reproduces Figures 1, 3, 6, and the online-data panel Figure 12(a), using
-repository-relative paths.
+<p align="justify">
+Kodaikanal Solar Observatory (KoSO) is one of the oldest solar observatories, possessing an archive of multiwavelength solar observations, including white light, Ca II K, and H<em>α</em> images spanning over a century. In addition to these observations, KoSO has preserved hand-drawn suncharts (1904–2022), on which various solar features such as sunspots, plages, filaments, and prominences are marked on the Stonyhurst grid with distinct color coding. In this study, we present the first comprehensive result that includes the entire dataset from these suncharts using a supervised machine learning (ML) model called “convolutional neural networks” (CNNs), first to identify the solar disks from the charts (1909–2007) and second to identify the plages, spanning nine solar cycles (1916–2007). We train the CNN with the manually identified solar disk and plages. We first detect the solar limb and the north–south line in the suncharts, which enables the extraction of disk center coordinates, radius, and <em>P</em> angle. Following that, we use a CNN similar architecture to achieve accurate image segmentation for the identification of plages. We compare plage areas derived from the suncharts with those obtained from Ca II K full-disk observations, and find good agreement that demonstrates the potential application of such an ML technique for historical data. The results of this study further demonstrate the potential application of sunchart data to fill the existing data gaps in the KoSO multiwavelength observations and contribute toward constructing a composite series over the last century.
+</p>
 
-## Layout
+## Data and code
 
-- `notebooks/figure_code.ipynb`: clean, portable figure notebook.
-- `notebooks/source/`: original exploratory notebooks retained for provenance.
-- `data/`: compact inputs required by `figure_code.ipynb`.
-- `figures/reference/`: author-generated figure files used for comparison.
-- `outputs/`: generated figures (ignored except for its placeholder).
-- `PLOT_COMPARISON.md`: figure-by-figure audit against the paper.
+| File | Description |
+| :--- | :--- |
+| [`KoSO_sunchart_plage_butterfly.h5`](apjs_material/KoSO_sunchart_plage_butterfly.h5) | Daily plage-area time–latitude data for 1916–2007. |
+| [`filtered_sunchart_mask_area.txt`](apjs_material/filtered_sunchart_mask_area.txt) | Filtered sunchart plage-area data. |
+| [`code_ApjS.py`](apjs_material/code_ApjS.py) | Python code supplied with the ApJS material. |
+| [`readme.md`](apjs_material/readme.md) | Detailed description of the ApJS dataset and its HDF5 structure. |
 
-## Run
+## Plage-area butterfly diagram
 
-```bash
-python -m pip install -r requirements.txt
-jupyter lab notebooks/figure_code.ipynb
-```
-
-Run the cells from top to bottom. The generated PDFs are written to `outputs/`.
-
-## Data scope
-
-The original project contains several gigabytes of scanned TIFF files and model
-artifacts, including individual files above GitHub's normal 100 MB object
-limit. Those files are not duplicated here. The repository includes the
-compact tables, training histories, published figure references, and the
-46.7 MB HDF5 online data product needed for the public figure workflow.
-
-The HDF5 file contains:
-
-- `mask_area`: daily plage area by 1-degree latitude bin, in millionths of the
-  solar disk fraction.
-- `dates`: ISO-8601 observation dates.
-
-The data span 1916-2007 and cover solar cycles 15-23.
+![Plage-area time–latitude butterfly diagrams from the current work, Jha et al. (2024), and the composite series](plots/butterfly_main_result.png)
